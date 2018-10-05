@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'customermanager';
+  name = 'vishnu';
+  color;
+  changeColor(val){
+    this.name = val.value;
+    this.color = val.value || 'lightgrey';
+    console.log(val);
+  }
+ 
 }
