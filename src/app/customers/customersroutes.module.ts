@@ -3,6 +3,7 @@ import { CustomersComponent } from "./customers.component";
 import { CustomersCardViewComponent } from "./customerscardview.component";
 import { CustomersListViewComponent } from "./customerslistview.component";
 import { RouterModule, Routes } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 const custroutes:Routes = [
     {
@@ -15,7 +16,7 @@ const custroutes:Routes = [
 ]
 @NgModule({
     declarations: [CustomersComponent, CustomersCardViewComponent, CustomersListViewComponent],
-    imports: [RouterModule.forChild(custroutes)],
+    imports: [ CommonModule,RouterModule.forChild(custroutes)],
     exports: [RouterModule]
 })
 export class CustomersRouterModule{

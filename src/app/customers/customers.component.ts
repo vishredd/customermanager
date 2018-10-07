@@ -13,15 +13,14 @@ export class CustomersComponent implements OnInit{
         }
 
         ngOnInit(){
-
+            let selfthis = this;
             this.data.getInfo().subscribe(function(dataInfo){
                 console.log(dataInfo);
-                this.datacontent = this.dataInfo;
-        }
-
-        // setTimeout =>(console.log('set time out',this.datacontent),1000)
-        
-        )
+                selfthis.datacontent = this.dataInfo;
+                console.log('inside subscribe method', this.datacontent);
+        })
+        //    setTimeout(()=>{console.log('setTimeout',this.datacontent)},1000);
+        setTimeout(() => {console.log('setTimeout',this.datacontent)},1000)
     }
     
     obj = {
