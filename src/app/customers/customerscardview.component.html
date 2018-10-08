@@ -1,4 +1,15 @@
 <h3>Customers Card View details</h3>
-<ul>
-    <li *ngFor = 'let data of datainfo'>{{data.firstName}}</li>
-</ul>
+
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;" *ngFor = 'let data of datainfo' >
+    <div class="card-header" >{{data.firstName}}</div>
+    <div class="card-body" style="background-color:white">
+      
+      <p class="card-text" style="color:steelblue">{{data.city}}</p>
+      <p class="card-text" style="color:steelblue">{{data.state.name}}</p>
+      <p class="card-text" style="color:steelblue">view orders</p>
+    </div>
+</div>
+
+
+    <!-- <li *ngFor = 'let data of datainfo'>{{data.firstName}}</li> -->
+    

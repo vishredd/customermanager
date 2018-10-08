@@ -19,5 +19,7 @@
       </form>
     </div>
   </nav>
-  <app-customerscardview [datainfo]= 'datacontent' ></app-customerscardview>
-<router-outlet></router-outlet>
+  <!-- <app-customerscardview [datainfo]= 'datacontent' ></app-customerscardview> -->
+  <app-customerslistview [datainfo]= 'datacontent'></app-customerslistview>
+<!-- <router-outlet></router-outlet> -->
+<app-pagination [pageInfo] = 'paginationnum'(sendinfo) = 'onPagnitionClick($event)'></app-pagination>
