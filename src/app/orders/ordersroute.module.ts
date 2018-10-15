@@ -4,7 +4,7 @@ import { RouterModule } from "@angular/router";
 
 const orderroutes = [
     {
-    path: 'orders', component:OrdersComponent,},
+    path: '', component:OrdersComponent,},
 
 ]
 @NgModule({

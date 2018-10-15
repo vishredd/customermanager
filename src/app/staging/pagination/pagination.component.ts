@@ -6,6 +6,17 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 export class PaginationComponent{
 
+    private PagerTotalItems: number;
+    private pagerPageSize: number;
+
+    totalPages: number;
+    pages: number[] = [];
+    currentPage = 1;
+    isVisible = false;
+    previousEnabled = false;
+    nextEnabled = true;
+
+
 @Input() pageInfo;
 @Output() sendInfo = new EventEmitter();
 arr = [1, 2, 3, 4 ];

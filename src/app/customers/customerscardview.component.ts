@@ -6,5 +6,10 @@ import { Component, Input } from "@angular/core";
 })
 export class CustomersCardViewComponent{
     @Input() datainfo;
+    constructor(){
+        console.log('inside customercard', this.datainfo);
+    }
+
+        
 
 }

@@ -1,17 +1,32 @@
+<div class="customers view indent">
+  <div class="container">
+      <header>
+          <h3>
+              <span class="glyphicon glyphicon-user"></span>
+              {{ title }}
+          </h3>
+      </header>
+      <br />
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
    
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['cardview']">CardView <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['listview']">ListView</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Maps</a>
-        </li>
+          <li class="nav-item">
+              <a (click)="changeDisplayMode(displayModeEnum.Card)" [class.active]="displayMode === displayModeEnum.Card">
+                  <span class="glyphicon glyphicon-th-large"></span> Card View 
+              </a>
+          </li>
+          <li class="nav-item">
+              <a (click)="changeDisplayMode(displayModeEnum.List)" [class.active]="displayMode === displayModeEnum.Grid">
+                  <span class="glyphicon glyphicon-align-justify"></span> List View
+              </a>
+          </li>
+          <li class="nav-item">
+              <a (click)="changeDisplayMode(displayModeEnum.Map)" [class.active]="displayMode === displayModeEnum.Map">
+                  <span class="glyphicon glyphicon-map-marker"></span> Map View
+              </a>
+          </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Filter">
@@ -19,7 +34,17 @@
       </form>
     </div>
   </nav>
-  <!-- <app-customerscardview [datainfo]= 'datacontent' ></app-customerscardview> -->
-  <app-customerslistview [datainfo]= 'datacontent'></app-customerslistview>
+  <app-customerscardview 
+  [datainfo]= 'datacontent'  
+  [hidden]="displayMode !== displayModeEnum.Card">
+</app-customerscardview>
+  <app-customerslistview 
+  [datainfo]= 'datacontent'>
+  [hidden]="displayMode !== displayModeEnum.List">
+  </app-customerslistview> -->
 <!-- <router-outlet></router-outlet> -->
-<app-pagination [pageInfo] = 'paginationnum'(sendinfo) = 'onPagnitionClick($event)'></app-pagination>
+<app-pagination 
+[pageInfo] = 'paginationnum'
+(sendinfo) = 'onPagnitionClick($event)'></app-pagination>
+</div>
+</div>

@@ -9,10 +9,10 @@ import { SharedModule } from "../staging/shared.module";
 const custroutes:Routes = [
     {
         path: '', component: CustomersComponent,
-        children:[
-            {path: 'cardview', component: CustomersCardViewComponent },
-            {path:'listview', component: CustomersListViewComponent},
-                ]
+        // children:[
+        //     {path: 'cardview', component: CustomersCardViewComponent },
+        //     {path:'listview', component: CustomersListViewComponent},
+        //         ]
     }
 ]
 @NgModule({

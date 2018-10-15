@@ -8,9 +8,11 @@ import { PageNotFound } from "./pagenotfound.component";
 
 export const routes:Routes = [
     
-    {path:'orders', component:OrdersComponent},
+    { path: '', pathMatch: 'full', redirectTo: '/customers' },
+    // {path:'',  redirectTo:'customers', pathMatch:'full'},
+    {path:'orders', loadChildren:'./orders/orders.module#OrdersModule'},
     {path: 'customers', loadChildren:'./customers/customers.module#CustomersModule'},
-    {path:'',  redirectTo:'customers', pathMatch:'full'},
+    
     {path:'**',  component:PageNotFound},
 ]
 
